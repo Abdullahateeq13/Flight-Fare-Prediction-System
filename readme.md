@@ -28,3 +28,16 @@
     - 6.4 Create a ```model_trainer.py``` file, In this file, we will train the model, all the training code will be written here, how many different kinds of model i have to used, confusion matrix if i am solving classification problem, R square and adjusted R square if i am solving regression problem
 
 
+7. Now, Create a ```pipeline``` folder in ```src``` folder.
+    - 7.1 First of all, create a ```__init__.py``` file.
+    - There are two types of pipelines,
+    - i) Training Pipeline
+        - In this we create a ```train_pipeline.py``` file, In which only training code will be written and it will be connected to modules of components.
+    - ii) Prediction Pipeline
+        - In this, we will create a ```predict_pipeline.py``` file, In which prediction code will be written.
+
+8. Now, My whole project is developing inside ```src``` folder, So now creating two important files,
+    - 8.1 Create ```logger.py``` file, for logging purpose.
+    - 8.2 Create ```exception.py``` file, for exception handling purposes.
+    - 8.3 Create ```utils.py``` file, for general purpose.
+
