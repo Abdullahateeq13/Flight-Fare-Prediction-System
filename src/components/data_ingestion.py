@@ -22,7 +22,7 @@ class DataIngestion:
         logging.info("Data ingestion initiated")
 
         try:
-            df = pd.read_csv("notebook\\data\\final_train_df.csv")
+            df = pd.read_excel("notebook\\data\\Data_Train.xlsx")
             logging.info('Read the dataset as a dataframe')
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
