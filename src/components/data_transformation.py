@@ -16,7 +16,7 @@ class DataTransformationConfig:
     # obj_file = os.path.join('artifacts','object.pkl')
     pass
 
-class DataTrasformation:
+class DataTransformation:
     def __init__(self) -> None:
         self.data_transformation_config=DataTransformationConfig()
 

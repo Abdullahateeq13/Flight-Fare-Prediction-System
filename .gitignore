@@ -129,4 +129,4 @@ dmypy.json
 .pyre/
 
 # Heavy models
-artifacts/model.pkl
+# artifacts/model.pkl

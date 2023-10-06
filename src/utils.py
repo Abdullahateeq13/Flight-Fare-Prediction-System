@@ -8,7 +8,7 @@ from sklearn.metrics import mean_absolute_error
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
 from src.exception import CustomException
-from sklearn.model_selection import RandomizedSearchCV
+from sklearn.model_selection import RandomizedSearchCV, GridSearchCV
 import dill
 
 def save_object(file_path, obj):
@@ -32,11 +32,17 @@ def evaluate_models(X_train, y_train,X_test,y_test,models,param):
             model = list(models.values())[i]
             para=param[list(models.keys())[i]]
 
-            rf = RandomizedSearchCV(model,param_distributions=para,cv=3, n_iter=10, random_state=42)
-            rf.fit(X_train,y_train)
+            # rf = RandomizedSearchCV(model,param_distributions=para,cv=3, n_iter=10, random_state=42)
+            # rf.fit(X_train,y_train)
 
-            best_params = rf.best_params_
+            grid_search = GridSearchCV(model, para, cv=3)
+            grid_search.fit(X_train, y_train)
+
+            best_params = grid_search.best_params_
             model.set_params(**best_params)
+
+            # best_params = rf.best_params_
+            # model.set_params(**best_params)
 
             model.fit(X_train,y_train)
 
