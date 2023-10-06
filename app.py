@@ -19,7 +19,7 @@ def home():
 def predict():
     if request.method == "POST":
         # Date_of_Journey
-        date_dep = request.form["Dep_Time"]
+        date_dep = request.form["dep_time"]
         Journey_day = int(pd.to_datetime(date_dep, format="%Y-%m-%dT%H:%M").day)
         Journey_month = int(pd.to_datetime(date_dep, format ="%Y-%m-%dT%H:%M").month)
         # print("Journey Date : ",Journey_day, Journey_month)
@@ -30,7 +30,7 @@ def predict():
         # print("Departure : ",Dep_hour, Dep_min)
 
         # Arrival
-        date_arr = request.form["Arrival_Time"]
+        date_arr = request.form["arrival_time"]
         Arrival_hour = int(pd.to_datetime(date_arr, format ="%Y-%m-%dT%H:%M").hour)
         Arrival_min = int(pd.to_datetime(date_arr, format ="%Y-%m-%dT%H:%M").minute)
         # print("Arrival : ", Arrival_hour, Arrival_min)
@@ -217,7 +217,7 @@ def predict():
 
         # Source
         # Banglore = 0 (not in column)
-        Source = request.form["Source"]
+        Source = request.form["source"]
         if (Source == 'Delhi'):
             s_Delhi = 1
             s_Kolkata = 0
@@ -255,7 +255,7 @@ def predict():
 
         # Destination
         # Banglore = 0 (not in column)
-        Source = request.form["Destination"]
+        Source = request.form["destination"]
         if (Source == 'Cochin'):
             d_Cochin = 1
             d_Delhi = 0
@@ -356,11 +356,6 @@ def predict():
 
 
     return render_template("home.html")
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
 
 
 if __name__ == "__main__":
