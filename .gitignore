@@ -130,3 +130,5 @@ dmypy.json
 
 # Heavy models
 # artifacts/model.pkl
+.ebextensions
+python.config
